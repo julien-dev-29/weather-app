@@ -82,11 +82,12 @@ footer {
 }
 
 main {
+  width: 100%;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px;
   height: 100%;
   background-color: var(--blue-3);
 }
@@ -116,6 +117,7 @@ nav ul {
   margin-top: 8px;
   text-align: center;
   font-size: 2rem;
+  color: var(--slate-11);
 }
 
 #conditions-container {
@@ -125,6 +127,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  color: var(--slate-12);
 }
 
 #conditions-container img {
@@ -137,6 +140,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  color: var(--slate-11);
 }
 
 #windDir {

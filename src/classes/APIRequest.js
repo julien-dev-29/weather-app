@@ -98,6 +98,11 @@ class APIRequest {
         return "↖️";
     }
 
+    /**
+     * 
+     * @param {*} condition 
+     * @returns 
+     */
     getWeatherIcon(condition) {
         const iconMap = {
             "Clear": "☀️",
@@ -107,6 +112,7 @@ class APIRequest {
             "Mist": "🌫️",
             "Patchy rain possible": "🌦️",
             "Rain": "🌧️",
+            "Rain, Partially cloudy": "🌧️" + "🌤️",
             "Heavy rain": "🌧️",
             "Snow": "❄️",
             "Thunderstorm": "⛈️",
@@ -116,12 +122,20 @@ class APIRequest {
         return iconMap[condition] || "❓"; // valeur par défaut
     }
 
+    /**
+     * 
+     */
     async toggleTemp() {
         console.log(this.currentGroup);
         this.currentGroup = this.currentGroup === "metric" ? "us" : "metric"
         this.populate(this.location)
 
     }
+
+    /**
+     * 
+     * @returns 
+     */
     queryBuild() {
         this.url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this.location}?unitGroup=${this.currentGroup}&key=VP6656SFEG67RN7QUBDHH2K23&contentType=json`
         return this.url
